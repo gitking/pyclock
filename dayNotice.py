@@ -40,7 +40,7 @@ class TimeList():
             tTime = {}
             tTime["time"] = cr[1].strip()
             tTime["msg"] = cr[0].strip()
-            tTime["ctime"] = getTimeStamp(daytime, tTime["time"])
+            tTime["ctime"] = getTimeStamp(daytime+" "+tTime["time"])
             if tTime["ctime"] < ttTime:
                 tTime["ctime"] = tTime["ctime"]+86400
             times[tTime["time"]] = tTime
