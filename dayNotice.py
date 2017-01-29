@@ -3,15 +3,9 @@ import os
 import time
 import winsound
 
-
 def notice(msg):
     winsound.PlaySound("ALARM1", winsound.SND_ASYNC)
     os.popen("wscript.exe speak.vbs "+msg)
-
-def adptStr(tstr, data):
-    for kk in data:
-        tstr = tstr.replace(kk, data[kk])
-    return tstr
 
 def getTimeStamp(timeStr):
     timeArray = time.strptime(timeStr, "%Y-%m-%d %H:%M:%S")
@@ -63,7 +57,6 @@ def mainLoop():
     while(1):
         tT.tick()
         time.sleep(10)
-
 
 if __name__ == "__main__":
     mainLoop()
